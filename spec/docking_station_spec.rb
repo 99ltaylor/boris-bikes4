@@ -8,8 +8,18 @@ describe DockingStation do
     expect(bike).to be_working
   end
 
-  # needs more work challenge 11
-  # it 'Should dock bike in the docking station' do
-  #   bike = subject.dock_bike(hired)
-  #   expect(bike).to
+  it "checks if there is a station" do
+    station = DockingStation.new
+    expect(station).to respond_to :dock
+  end
+
+  it "adds a bike to the dock" do
+    station = DockingStation.new
+    expect(station.dock("bike")).to eq "bike"
+  end
+
+  it "shows me the status of the bikes in the station" do
+    station = DockingStation.new
+    expect(station).to respond_to :dock_station_status
+  end
 end
